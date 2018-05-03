@@ -1,3 +1,26 @@
 page-time {
+    
+}
 
+.clock {
+    // text-align: center;
+    h1 {
+        font-size: 10vh;
+    }
+    h2 {
+        font-size: 7vh;
+    }
+    .points {
+        margin: 0;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 15px solid #ccc;
+        margin: 1em 0;
+        padding: 0; 
+        width: 22%;
+        border-color: white;
+    }
 }

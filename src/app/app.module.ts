@@ -13,6 +13,7 @@ import { TimePage } from '../pages/time/time';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
+import { TimeProvider } from '../providers/time/time';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { WeatherProvider } from '../providers/weather/weather';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WeatherProvider
+    WeatherProvider,
+    TimeProvider
   ]
 })
 export class AppModule {}

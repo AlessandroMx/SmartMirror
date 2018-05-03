@@ -14,7 +14,7 @@ export class WeatherProvider {
   }
 
   getWeather(city, state) {
-    //return this.http.get(this.url + '/' + state + '/' + city + '.json');
+    // return this.http.get(this.url + '/' + state + '/' + city + '.json');
     return this.http.get(this.url+'/zmw:00000.45.76005.json');
   }
 

@@ -9,6 +9,8 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from './../pages/settings/settings';
 import { TimePage } from '../pages/time/time';
+import { NewsfeedPage } from './../pages/newsfeed/newsfeed';
+import { WeatherPage } from './../pages/weather/weather';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +24,9 @@ import { TimeProvider } from '../providers/time/time';
     HomePage,
     TabsPage,
     SettingsPage,
-    TimePage
+    TimePage,
+    NewsfeedPage,
+    WeatherPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { TimeProvider } from '../providers/time/time';
     HomePage,
     TabsPage,
     SettingsPage,
-    TimePage
+    TimePage,
+    NewsfeedPage,
+    WeatherPage
   ],
   providers: [
     HttpClientModule,

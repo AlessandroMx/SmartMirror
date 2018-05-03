@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WeatherProvider } from '../../providers/weather/weather';
 
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-weather',
+  templateUrl: 'weather.html',
 })
-export class HomePage {
+export class WeatherPage {
+
   weather: any;
   location: {
     city: string,

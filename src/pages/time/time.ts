@@ -9,10 +9,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TimePage {
   
-  time: Date; //= new Date();
-  hour: any; // = this.time.getHours();
-  minute: any; // = this.time.getMinutes();
-  second: any; // = this.time.getSeconds();
+  time: Date;
+  hour: any;
+  minute: any; 
+  second: any; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private timeProvider: TimeProvider) {
   }
@@ -20,9 +20,11 @@ export class TimePage {
   ionViewDidLoad() {
     this.timeProvider.getClock().subscribe(time => {
       this.time = time
-      this.hour = this.time.getHours();
-      this.minute = this.time.getMinutes();
       let tmpSecond: any = this.time.getSeconds();
+      let tmpMinute: any = this.time.getMinutes();
+      let tmpHour : any = this.time.getHours();
+      this.hour = tmpHour < 10 ? '0' + tmpHour : tmpHour;
+      this.minute = tmpMinute < 10 ? '0' + tmpMinute : tmpMinute;
       this.second = tmpSecond < 10 ? '0' + tmpSecond : tmpSecond;
     });
   }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
 import { WeatherPage } from './../weather/weather';
-import { HomePage } from '../home/home';
 import { TimePage } from '../time/time';
 import { SettingsPage } from './../settings/settings';
 import { NewsfeedPage } from '../newsfeed/newsfeed';

@@ -8,7 +8,6 @@ export class TimeProvider {
   private clock: Observable<Date>;
 
   constructor(public http: HttpClient) {
-    // console.log('Hello TimeProvider Provider');
     this.clock = Observable.interval(1000).map(tick => new Date()).share();
   }
 

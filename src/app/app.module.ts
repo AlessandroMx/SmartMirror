@@ -5,7 +5,6 @@ import { MyApp } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingsPage } from './../pages/settings/settings';
 import { TimePage } from '../pages/time/time';
@@ -16,12 +15,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 import { TimeProvider } from '../providers/time/time';
+import { NewsProvider } from '../providers/news/news';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    HomePage,
     TabsPage,
     SettingsPage,
     TimePage,
@@ -37,7 +36,6 @@ import { TimeProvider } from '../providers/time/time';
   entryComponents: [
     MyApp,
     AboutPage,
-    HomePage,
     TabsPage,
     SettingsPage,
     TimePage,
@@ -50,7 +48,8 @@ import { TimeProvider } from '../providers/time/time';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
-    TimeProvider
+    TimeProvider,
+    NewsProvider
   ]
 })
 export class AppModule {}

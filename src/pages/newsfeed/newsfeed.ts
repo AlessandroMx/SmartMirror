@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewsProvider } from '../../providers/news/news';
@@ -9,11 +10,12 @@ import { NewsProvider } from '../../providers/news/news';
 })
 export class NewsfeedPage {
 
-  news : any;
+  news: any;
   source: string;
   title: string;
   description: string;
   newsData: any;
+  currentNews: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private newsProvider: NewsProvider) {
   }
@@ -23,18 +25,25 @@ export class NewsfeedPage {
     this.newsProvider.getNews().subscribe(news => {
       console.log(news);
       if (news['status'] == 'ok') {
-        let news_articles = news['articles'];
-        this.source = news_articles[0]['source']['name'];
-        this.title = news_articles[0]['title'];
-        this.description = news_articles[0]['description'];
+        /* let news_articles = news['articles'];
+        this.source = news_articles[this.currentNews]['source']['name'];
+        this.title = news_articles[this.currentNews]['title'];
+        this.description = news_articles[this.currentNews]['description']; */
+        this.newsData = news['articles'];
       }
     });
-    /* this.newsProvider.getNewsData().subscribe(newsData => {
-      this.newsData = newsData;
-      this.source = this.newsData.source;
-      this.title = this.newsData.title;
-      this.description = this.newsData.description;
-    }); */
+
+    let newsObservable = Observable
+      .interval(10 * 1000)
+      .timeInterval();
+
+    newsObservable.subscribe(x => {
+      console.log(this.currentNews);
+      this.source = this.newsData[this.currentNews]['source']['name'];
+      this.title = this.newsData[this.currentNews]['title'];
+      this.description = this.newsData[this.currentNews]['description'];
+      this.currentNews += this.currentNews <= 18 ? 1 : -20;
+    });
   }
 
 }

@@ -23,12 +23,7 @@ export class NewsfeedPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewsfeedPage');
     this.newsProvider.getNews().subscribe(news => {
-      console.log(news);
       if (news['status'] == 'ok') {
-        /* let news_articles = news['articles'];
-        this.source = news_articles[this.currentNews]['source']['name'];
-        this.title = news_articles[this.currentNews]['title'];
-        this.description = news_articles[this.currentNews]['description']; */
         this.newsData = news['articles'];
       }
     });
@@ -38,11 +33,18 @@ export class NewsfeedPage {
       .timeInterval();
 
     newsObservable.subscribe(x => {
-      console.log(this.currentNews);
-      this.source = this.newsData[this.currentNews]['source']['name'];
-      this.title = this.newsData[this.currentNews]['title'];
-      this.description = this.newsData[this.currentNews]['description'];
-      this.currentNews += this.currentNews <= 18 ? 1 : -20;
+      try {
+        this.source = this.newsData[this.currentNews]['source']['name'];
+        this.title = this.newsData[this.currentNews]['title'];
+        this.description = this.newsData[this.currentNews]['description'];
+        this.currentNews += this.currentNews <= 18 ? 1 : -20;
+      } catch (e) {
+        console.log(e);
+        this.source = '';
+        this.title = '';
+        this.description = '';
+        this.currentNews += this.currentNews <= 18 ? 1 : -20;
+      }
     });
   }
 

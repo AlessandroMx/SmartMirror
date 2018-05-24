@@ -5,6 +5,7 @@ import { WeatherPage } from './../weather/weather';
 import { TimePage } from '../time/time';
 import { SettingsPage } from './../settings/settings';
 import { NewsfeedPage } from '../newsfeed/newsfeed';
+import { CalendarPage } from './../calendar/calendar';
 
 
 @Component({
@@ -15,8 +16,9 @@ export class TabsPage {
   tab1Root = TimePage;
   tab2Root = WeatherPage;
   tab3Root = NewsfeedPage;
-  tab4Root = AboutPage;
-  tab5Root = SettingsPage;
+  tab4Root = CalendarPage;
+  tab5Root = AboutPage;
+  tab6Root = SettingsPage;
 
   constructor() {
 

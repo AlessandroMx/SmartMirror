@@ -1,3 +1,4 @@
+import { CalendarComponent } from './../components/calendar/calendar';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,6 +11,7 @@ import { SettingsPage } from './../pages/settings/settings';
 import { TimePage } from '../pages/time/time';
 import { NewsfeedPage } from './../pages/newsfeed/newsfeed';
 import { WeatherPage } from './../pages/weather/weather';
+import { CalendarPage } from './../pages/calendar/calendar';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +27,8 @@ import { NewsProvider } from '../providers/news/news';
     SettingsPage,
     TimePage,
     NewsfeedPage,
-    WeatherPage
+    WeatherPage,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { NewsProvider } from '../providers/news/news';
     SettingsPage,
     TimePage,
     NewsfeedPage,
-    WeatherPage
+    WeatherPage,
+    CalendarPage
   ],
   providers: [
     HttpClientModule,

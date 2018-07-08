@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 import { TimeProvider } from '../providers/time/time';
 import { NewsProvider } from '../providers/news/news';
+import { CalendarProvider } from '../providers/calendar/calendar';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NewsProvider } from '../providers/news/news';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
     TimeProvider,
-    NewsProvider
+    NewsProvider,
+    CalendarProvider
   ]
 })
 export class AppModule {}
